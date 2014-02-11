@@ -1,0 +1,463 @@
+body, html{
+	height:100%;
+	
+}
+
+body, body *{
+	margin:0;
+	padding:0;
+	font-family:Arial, Helvetica, sans-serif;
+	font-size:11px;
+	
+}
+img{
+	border:0px red solid;
+}
+body{ width:100%; background:white;}
+
+ul, li{ list-style:none; }
+
+fieldset{ border:none; }
+.col{ display:inline; }
+.full{ width:100%!important; }
+.layer {
+	position:absolute;
+}
+.right{ float:right; }
+.left{ float:left; }
+.clearer{
+	clear:both;
+	display:block;
+	height:0px;
+	line-height:0px!important;
+	font-size:0px!important;
+}
+.bgwhite{
+	background:white!important;
+	border-width:0px!important;
+}
+
+#bodycontent{ background-position:center top; background-repeat:no-repeat;  }
+#bodycontent{ background:none!important; }
+#bodycontent {
+	display:block;
+	height:100%;
+	margin:auto;
+}
+/* **********************************************/
+/* DEFAUT*/
+/* **********************************************/
+
+a:link, a:visited {
+	color: #1C2861;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+a:hover, a:active {
+	color: #1C2861;
+	font-weight: bold;
+	text-decoration: underline;
+}
+
+
+h1 {
+	color: #1C2861;
+	font-weight: bold;
+	font-size: 150%;
+}
+
+h2 {
+	color: #1C2861;
+	font-weight: bold;
+	font-size: 130%;
+}
+
+h3 {
+	color: #1C2861;
+	font-weight: bold;
+	font-size: 120%;
+}
+
+h4 {
+	color: Red;
+	font-weight: normal;
+	font-size: 110%;
+}
+
+
+/* **********************************************/
+/* header CLASSES */
+/* **********************************************/
+
+#header{
+	z-index:1;
+	left:50%;
+	right:50%;
+	top:0px;
+	margin-left:-475px;
+	width:950px;
+	height:150px;
+	border:0px red solid;
+}
+#header h1, #header h1 a{
+	width:315px;
+	height:120px;
+}
+#header h1{ display:inline; float:left; }
+#header h1 a{ display:block; }
+#header h1{	margin-left:43px; }
+
+#header .shade{
+	z-index:20;
+	left:0;
+	bottom:0;
+	width:1003px;
+	height:9px;
+}
+#header-blue-nav{
+	background-color:#4c4cbf;
+	color:white;
+	height:24px;
+	margin-top:-2px;
+}
+
+#header-nav li{
+	float:left;
+}
+
+#header-nav li a{
+	float:left;
+	background-color:#4c4cbf;
+	color:white;
+	height:19px;
+	padding-top:5px;
+	padding-left:5px;
+	padding-right:5px;
+	text-decoration:none;
+}
+#header-nav li a:hover{
+	background-color:#9999fa;
+}
+
+.whiteline{
+	width:100%;
+	background:white;
+	height:0px;
+}
+
+#header-orange-nav {
+	background-color:#f69a00;
+	height:30px;
+	
+}
+
+#header-orange-nav .btnmenuorange{
+	float:left;
+	position:relative;
+}
+
+#header-orange-nav ul{
+	margin-left:280px;
+	padding:0px;
+	height:24px;
+}
+#header-orange-nav li{
+	margin:0px;
+	height:24px;
+}
+#header-orange-nav .btnmenuorange a{
+	font-weight:bold;
+	color:#bd4d11;
+	padding:5px 15px 4px;
+	position:relative;
+	top:5px;
+	text-decoration:none;
+	background-color:white;
+	/*white-space : nowrap;*/
+	font-size:9pt;
+}
+
+#header-orange-nav .btnmenuorange a:hover{
+	background:#bd4d11;
+	color:white;
+}
+
+#header-orange-nav .submenu{
+	position:absolute;
+	margin-left:0px;
+	background:white;
+	margin-top:0px;
+	
+}
+#header-orange-nav .submenu li{
+	position:relative;
+	clear:left;
+	margin-bottom:1px;
+}
+
+#header-orange-nav .submenu a{
+	background:#dbdbfd;
+	color:#8e3310;
+	padding-left:20px;
+	height:16px;
+	width:262px;
+	padding-top:2px;
+}
+
+#header-orange-nav .submenu a:hover{
+	background:url('../images/menupuce.gif') #dbdbfd no-repeat 0px 0px ;
+}
+/* **********************************************/
+/* PAGE */
+/* **********************************************/
+
+#page {}
+	
+#page .content{
+	
+	color:#8e3310;
+	/*padding:5px;*/
+}
+#page strong, #page b {
+	/*color:#fe5e00;*/
+}
+
+#page .content p{
+	padding-bottom:20px;
+}
+#page ul, .content li{ 
+	list-style:disc;
+	/*margin-left:20px;*/
+}
+#page a:link, a:visited {
+	text-decoration: underline;
+}
+
+#page a:hover, a:active {
+}
+#page .special{
+	color:#8e3310;
+}
+
+#dd1-ct div{
+	padding:10px;
+}
+#dd2-ct div{
+	padding:10px;
+}
+#dd3-ct div{
+	padding:10px;
+}
+
+/* **********************************************/
+/* CENTER CLASSES */
+/* **********************************************/
+
+#center{
+	position:relative;
+	clear:both;
+	display:block;
+	
+	margin:0 auto;
+	
+	width:950px;
+	min-height:100%;
+	 border :1px #aaa solid;
+}
+* html #center{ height:100%; }
+
+
+
+#page{ width:751px; border :0px blue solid;padding-top:30px;}
+
+#page h1{
+	margin-left:2px;
+	background:url('../images/barretitle.gif') no-repeat bottom right;
+	height:28px;
+	font-size:13pt;
+	font-weight:bold;
+	color:#8e3310;
+}
+
+#page .chemindefer{
+	background:url('../images/path.jpg') no-repeat;
+	color:#f3960c;
+	padding-left:33px;
+	height:65px;
+	
+}
+
+#page .chemindefer a{
+	color:#f3960c;
+	font-size:8pt;
+	text-decoration:none;
+	font-weight:bold;
+	display:inline;
+}
+
+#page .chemindefer a:visited,a:link,a:active{
+	color:#f3960c;
+	text-decoration:none;
+	font-weight:bold;
+}
+#page .chemindefer a:hover{
+	text-decoration:underline;
+}
+
+#side{ width:199px; border :0px orange solid; }
+
+#side .boxinfo{
+	margin-top:5px;
+}
+#side .boxinfo .title{
+	height:39px;
+	background:#4c4cbf;
+	
+}
+#side .titlerub{
+	width:100px;
+	float:left;
+	color:white;
+	font-size:10pt;
+	font-weight:bold;
+	margin:5px;
+}
+#side .boxinfo ul{
+	background:#d1d1ff;
+	padding-bottom:10px;
+	border:0px #9999fa solid;
+	border-bottom-width:4px;
+}
+
+#side .boxinfo li{
+	list-style-image:url('../images/puce_li.gif');
+	margin-left:20px;
+	clear:left;
+}
+#side .boxinfo a{
+	color:#1c2861;
+	text-decoration:none;
+	font-weight:bold;
+}
+
+#side .title img{
+	
+	float:right;
+}
+
+#contentpage {
+	display:block;
+	margin:0 auto;
+	padding-bottom:60px;
+	padding-top:232px;
+	width:950px;
+}
+
+/* **********************************************/
+/* FOOTER CLASSES */
+/* **********************************************/
+
+#footer{
+	z-index:1;
+	left:0;
+	bottom:0;
+	text-align:center;
+	height:70px;
+	clear:both;
+}
+
+/* **********************************************/
+/* PLAN DU SITE*/
+/* **********************************************/
+#plandusite{
+	margin-top:10px;
+}
+#plandusite ul{
+	margin-left:50px;
+}
+#plandusite ul li{
+	padding-bottom:5px;
+	list-style-type:square;
+}
+#plandusite li a{
+	padding-bottom:5px;
+	text-decoration:none;
+}
+
+
+#plandusite li h3 a{
+	color:#fe5e00;
+	font-size:12pt;
+}
+/* **********************************************/
+/* ENFANT DE PAGE */
+/* **********************************************/
+#childpage{
+	clear:both;
+	margin:10px;
+	padding:0;
+}
+#childpage ul{
+	color:#8e3310;
+	margin:0;
+	margin-left:25px;
+	clear:both;
+}
+#childpage ul li{
+	list-style-image:url('../images/fleche_droite_bleue.jpg');
+	font-size:11px;
+	float:left;
+	margin-bottom:20px;
+	width:50%;
+}
+#childpage ul li a {
+	color:#8e3310;
+	text-decoration:none;
+}
+
+/* **********************************************/
+/* SIDE LEFT */
+/* **********************************************/
+#side ul{
+	margin:-3px 0 0;
+	padding:0px;
+}
+#side li {
+	margin:0px;
+	padding:0px;
+}
+#side li a{
+	margin:0px;
+	padding:0px;
+	display:block;
+	color:white;
+	font-weight:strong;
+	text-decoration:none;
+	font-size:11pt!important;
+	padding:4px!important;
+	height:19px!important;
+}
+
+
+#side li a:hover{
+	background:#F69A00;
+}
+
+
+#side li .one{
+	background:#8e3310;
+}
+#side li .two{
+	background:#bd4d11;
+}
+#blocleft1{
+	margin:0px;
+	padding:0px;
+}
+#blocleft2{
+	margin:0px;
+	padding:0px;
+	/*bottom:70px;*/
+	/*position:absolute;*/
+}

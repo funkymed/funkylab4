@@ -1,0 +1,55 @@
+<div id="page" class="col">
+	<div class="chemindefer">Vous etes ici : <a href="<?php print $this->baseUrl();?>/index.html">Accueil</a> </div>
+	<h1>Actualit&eacute;s</h1>
+	<div style="width:98%;" id="content">
+		<div style="float:right;">
+			<select onchange="document.location.href='<?php print $this->baseUrl();?>/agenda/'+this.value">
+				<option value="">Selectionnez une categorie</option>
+				<?php
+				foreach ($this->categories as $categorie){
+					$name 	= $categorie;
+					$value 	= strtolower($categorie);
+					if($value==strtolower($this->type)){
+						print '<option value="'.$value.'/" selected="selected">'.$name.'</option>';
+					}else{
+						print '<option value="'.$value.'/">'.$name.'</option>';
+					}
+				}
+				?>
+			</select>
+		</div>
+		<div class="clearer"></div>
+		<div>
+			<div class="special">
+				<?php
+				 	foreach($this->evenements as $event){
+				 ?>
+				 	<ul>
+						<li>
+							<a title="{$event->agenda_titre}" href="<?php print $this->baseUrl().$event->url;?>">
+								<?php if ($event->agenda_thumb!=""){ ?>
+								<img class="vignette" src="<?php print $this->baseUrl().'/'.$event->agenda_thumb;?>" />
+								<?php }else{ ?>
+								<img class="vignette" src="<?php print $this->baseUrl();?>/skins/images/logo.png" />
+								<?php } ?>
+							</a>
+							<div class="dateevent">
+								<?php print $event->agenda_debut;?>
+							</div>
+							<div>
+								<h3 class="normal">
+									<a title="{$event->agenda_titre}"href="<?php print $this->baseUrl().$event->url;?>"><?php print $event->agenda_titre;?></a>
+								</h3>
+								<p><?php print$event->agenda_chapeau;?> <span class="typeevent"><?php print $event->agenda_type;?></span></p>	
+							</div>
+						</li>
+					
+					</ul>
+				<?php
+					}
+				?>		
+			</div>
+		</div>
+		
+	</div>
+</div>

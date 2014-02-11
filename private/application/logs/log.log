@@ -1,0 +1,61 @@
+88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T21:44:00+01:00 CRIT (2): exception 'Zend_Db_Adapter_Exception' with message 'SQLSTATE[00000] [1045] Access denied for user: 'root@localhost' (Using password: NO)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Db/Adapter/Pdo/Abstract.php:144
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Db/Adapter/Pdo/Mysql.php(96): Zend_Db_Adapter_Pdo_Abstract->_connect()
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Db/Adapter/Abstract.php(304): Zend_Db_Adapter_Pdo_Mysql->_connect()
+#2 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(102): Zend_Db_Adapter_Abstract->getConnection()
+#3 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T21:44:01+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T22:09:43+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T23:10:40+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T23:11:11+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T23:11:51+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-25T23:11:52+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-31T15:28:50+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-31T15:28:53+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#2 {main}88.168.37.127 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.0.17) Gecko/2009122116 Firefox/3.0.17 (.NET CLR 3.5.30729)2010-01-31T16:12:05+01:00 CRIT (2): exception 'Zend_View_Exception' with message 'script 'common/header.phtml' not found in path (/homepages/15/d301349868/htdocs/www.cotestade.fr/private/application/views/layouts/:/homepages/15/d301349868/htdocs/www.cotestade.fr/private/application/views/layouts/:/homepages/15/d301349868/htdocs/www.cotestade.fr/private/application/views/scripts/)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View/Abstract.php:926
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View/Abstract.php(829): Zend_View_Abstract->_script('common/header.p...')
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View/Helper/Partial.php(103): Zend_View_Abstract->render('common/header.p...')
+#2 [internal function]: Zend_View_Helper_Partial->partial('common/header.p...', Array)
+#3 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View/Abstract.php(342): call_user_func_array(Array, Array)
+#4 [internal function]: Zend_View_Abstract->__call('partial', Array)
+#5 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/application/views/layouts/layout.phtml(61): Zend_View->partial('common/header.p...', Array)
+#6 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View.php(108): include('/homepages/15/d...')
+#7 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/View/Abstract.php(833): Zend_View->_run('/homepages/15/d...')
+#8 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Layout.php(793): Zend_View_Abstract->render('layout.phtml')
+#9 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Layout/Controller/Plugin/Layout.php(142): Zend_Layout->render()
+#10 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Plugin/Broker.php(331): Zend_Layout_Controller_Plugin_Layout->postDispatch(Object(Zend_Controller_Request_Http))
+#11 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(957): Zend_Controller_Plugin_Broker->postDispatch(Object(Zend_Controller_Request_Http))
+#12 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(120): Zend_Controller_Front->dispatch()
+#13 {main}88.166.215.101 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.1.7) Gecko/20091221 Firefox/3.5.72010-02-01T02:14:29+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(134): Zend_Controller_Front->dispatch()
+#2 {main}88.166.215.101 Mozilla/5.0 (Windows; U; Windows NT 5.1; fr; rv:1.9.1.7) Gecko/20091221 Firefox/3.5.72010-02-01T02:14:31+01:00 CRIT (2): exception 'Zend_Controller_Dispatcher_Exception' with message 'Invalid controller specified (error)' in /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Dispatcher/Standard.php:242
+Stack trace:
+#0 /homepages/15/d301349868/htdocs/www.cotestade.fr/private/library/Zend/Controller/Front.php(946): Zend_Controller_Dispatcher_Standard->dispatch(Object(Zend_Controller_Request_Http), Object(Zend_Controller_Response_Http))
+#1 /homepages/15/d301349868/htdocs/www.cotestade.fr/web/index.php(134): Zend_Controller_Front->dispatch()
+#2 {main}

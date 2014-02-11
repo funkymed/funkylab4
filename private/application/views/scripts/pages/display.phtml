@@ -1,0 +1,201 @@
+<?php
+	$pages = new TPages();
+?>
+<div id="page" class="col left">
+	 	
+	<div class="chemindefer">Vous etes ici : <?php  
+	
+		foreach($this->page->chemindefer as $k=>$item){
+			
+			print '<a href="'.$this->baseUrl().$this->url.$item->url.'">'.($pages->truncate($item->titre,50)).'</a>';
+			if(isset($this->page->chemindefer[$k+1]))
+				print ' &gt; ';
+		}
+	?></div>
+
+	<?php 
+		if(isset($_SESSION['cotestade']['user'])){
+			print '<h1 id="edit_titre">';
+			$padding = "padding:0px;";
+		}else{
+			print '<h1>';
+			//$padding = "padding:10px;";
+			$padding = "padding:0px;";
+		}
+		
+		print ($this->page->titre_complet=="") ? $this->page->titre : $this->page->titre_complet;
+		
+		print '</h1>';
+	?>
+	<div style="width:100%;">
+		<br/>
+		<?php
+			for($x=0;$x<sizeof($this->page->colonnes);$x++){
+				$colonne = $this->page->colonnes[$x];
+				
+				print '<div id="dd'.($x+1).'-ct" style="width:'.$colonne->width.'%;float:left;'.$padding.'" class="content">';
+				if(isset($colonne->items)){
+					foreach($colonne->items as $item){
+						$field = $item->field;
+						
+						//if(trim($this->page->$field)!="" && $this->page->$field!="0")
+						
+						if($this->page->actualites==1 && $item->type=="actualites"){
+							?>
+							<div id="content" style="width:auto;">
+								
+							
+								<div style="float:right;">
+									<select onchange="document.location.href='<?php print $this->baseUrl();?>/agenda/'+this.value" >
+										<option value="">Selectionnez une categorie</option>
+										<?php
+										foreach ($this->actucategories as $categorie){
+											$name 	= $categorie;
+											$value 	= strtolower($categorie);
+											if($value==strtolower($this->type)){
+												print '<option value="'.$value.'/" selected="selected">'.$name.'</option>';
+											}else{
+												print '<option value="'.$value.'/">'.$name.'</option>';
+											}
+										}
+										?>
+									</select>
+								
+								</div>
+								<div class="clearer"></div>
+								
+								
+								
+								<div class="special">
+									<?php
+									
+									 	foreach($this->actuevenements as $event){
+										 	
+									 ?>
+									 	<ul>
+											<li>
+												<a title="{$event->agenda_titre}" href="<?php print $this->baseUrl().$event->url;?>">
+													<?php if ($event->agenda_thumb!=""){ ?>
+													<img class="vignette" src="<?php print $this->baseUrl().'/'.$event->agenda_thumb;?>" />
+													<?php }else{ ?>
+													<img class="vignette" src="<?php print $this->baseUrl();?>/skins/images/logo.png" />
+													<?php } ?>
+												</a>
+												<div class="dateevent">
+													<?php print $event->agenda_debut;?>
+												</div>
+												<div>
+													<h3 class="normal">
+														<a title="{$event->agenda_titre}"href="<?php print $this->baseUrl().$event->url;?>"><?php print $event->agenda_titre;?></a>
+													</h3>
+													<p><?php print$event->agenda_chapeau;?> <span class="typeevent"><?php print $event->agenda_type;?></span></p>	
+												</div>
+											</li>
+										
+										</ul>
+									<?php
+										}
+										
+									?>		
+								</div>
+								<div id="content" style="width:auto;">
+									<div style="float:right;">	
+										<a href="<?php print $this->baseUrl();?>agenda/actualite/">voir toutes les actualit&eacute;s</a>
+									</div>
+								</div>
+							</div>
+							<?php
+						}else if($item->type!="actualites"){
+							if(!isset($_SESSION['cotestade']['user'])){
+								if(trim($this->page->$field)!="" && $this->page->$field!="0"){
+									if($item->type=="video"){
+										$id = 'video'.date('YmdHis').$x;
+										print '<div id="'.$id.'">';
+										print '<script type="text/javascript">';
+										print 'displayVideo("'.$id.'","'.$this->page->$field.'");';
+										print '</script>';
+										print '</div>';
+									}else if($item->type=="file"){
+										print '<div><a href="'.$this->page->$field.'">'.$this->page->$field.'</a></div>';
+									}else{
+										print '<div>'.$this->page->$field.'</div>';
+									}
+								}
+							}else{
+								print '<div>'.$this->page->$field.'</div>';
+							}
+						}
+					}
+				}
+				print '</div>';
+			}
+			if(isset($_SESSION['cotestade']['user'])){ 
+				print '<script type="text/javascript">';
+				print 'Ext.chewingCom.editor('.$this->page->id_page.',"'.$this->page->format.'",'.$this->page->online.','.$this->page->mise_en_page.','.$this->page->sidebar_display.','.$this->page->child_display.','.$this->page->info_display.','.$this->page->lien_display.','.$this->page->agenda_display.','.$this->page->menu_footer.','.$this->page->actualites.','.$this->page->brother_display.','.$this->page->demarches_display.');';
+				print "Ext.chewingCom.initEditor({'div':'edit_titre','type':'textfield',table:'site_page',field:'titre_complet','id':".$this->page->id_page."});";
+				print '</script>';
+			}
+			
+		?>
+		
+		<?php if ($this->page->contacts){ ?>
+			<div class="clearer"></div>
+				<div id="content">
+					<h3 class="title">Contacts utiles</h3>
+					<ul class="special">
+						<?php
+							foreach ($this->page->contacts as $i=>$contact){
+							
+									print '<li>';
+ 									print '<b>'.$contact->contact_titre.' '.$contact->contact_nom.' '.$contact->contact_prenom.'</b><br/>';
+ 									if ($contact->contact_quartier!="") print $contact->contact_quartier.'<br />';
+ 									
+ 									print $contact->contact_adresse.' '.$contact->contact_cp.' '.$contact->contact_ville.'<br/>';
+ 									if ($contact->contact_tel!="") print 'tel : '.$contact->contact_tel.'<br/>';
+ 									if ($contact->contact_fax!="") print 'fax : '.$contact->contact_fax.'<br/>';
+ 									
+ 									if ($contact->contact_email!="") print 'email : <a href="mailto:'.$contact->contact_email.'">'.$contact->contact_email.'</a><br/>';
+									if ($contact->contact_url!="") print 'lien : <a href="'.$contact->contact_url.'" target="_blank">'.$contact->contact_url.'</a><br/>';
+									if ($contact->contact_infopratique!=""){
+										print '<span style="cursor:pointer;font-weight:bold;" onclick="swapinfo(this,'.$i.');">[+]</span>&nbsp;Info pratique : <br/>';
+										print '<blockquote id="infopratique-'.$i.'" style="display:none;">'.nl2br($contact->contact_infopratique).'</blockquote>';
+									}
+									
+									if ($contact->contact_lat!="" && $contact->contact_long!=""){
+										
+										$_url = htmlentities('http://maps.google.com/maps/api/staticmap?center='.trim($contact->contact_lat).','.trim($contact->contact_long).'&zoom=16&size=400x400&markers=color:red|'.trim($contact->contact_lat).','.trim($contact->contact_long).'&key=ABQIAAAABfCfVJ6YRX7801uApvUPDRSozprusKgX_-CmD3KFbYU8LLydfxR3qZSvvpci8h2bMdBypl1b7YGr0A&sensor=false');
+										
+										print '<span style="cursor:pointer;font-weight:bold;" onclick="swapmap(this,'.$i.');">[+]</span>&nbsp;Afficher le plan : <br/>';
+										print '<blockquote  id="map-'.$i.'" style="display:none;">';
+										print '	<img src="'.$_url.'" />';
+										print '</blockquote>';
+									}
+									print '</li>';
+							}
+						?>
+					</ul>
+				</div>
+			<?php } ?>
+	
+	</div>
+	
+	<?php
+		//Si pas de sidebar
+		if(!isset($this->viewsidebar)  || isset($this->viewsidebar) && $this->viewsidebar==0){
+			//Si affichage des enfants demandé
+			if($this->page->child_display==1){
+				//Si des enfants
+				if(isset($this->page->children) && count($this->page->children)>0) {
+					print '<div id="childpage">';
+					print '<ul>';
+					foreach($this->page->children as $page){
+						print '<li><a href="'.$this->baseUrl().$page->url.'">'.($pages->truncate($page->titre,50)).'</a></li>';
+					}
+					print '</ul>';
+					print '</div>';
+				}
+			}
+		}
+	?>
+	
+</div>

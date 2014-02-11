@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<module>
+	<title><![CDATA[Annuaire]]></title>
+	<namespace>agendacontacts</namespace>
+	<icon>agendacontact</icon>
+	<desktop>1</desktop>
+	<order>3</order>
+	<initajax>grid.php</initajax>
+	<eval>1</eval>
+	<usertype>admin,videos,redacteur</usertype>
+</module>

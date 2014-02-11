@@ -1,0 +1,37 @@
+<?php 
+
+	$writer = new XMLWriter();
+	$writer->openMemory();
+	$writer->startDocument('1.0');
+	
+	$writer->startElement('rss');
+	
+	    $writer->writeAttribute('version', '2.0');
+	    
+	    $writer->writeElement('title', 'Ville de Saint Denis');
+	    $writer->writeElement('link', $this->url);
+	    $writer->writeElement('description', '');
+	    $writer->writeElement('language', 'en');
+	    $writer->writeElement('generator', 'home-made');
+	    $writer->writeElement('image', $this->url.'skins/images/rss.gif');
+	    $writer->writeElement('ttl', '1');
+	
+		$writer->startElement('channel');
+	
+		
+		foreach($this->evenements as $event){
+			$writer->startElement('item');
+				$writer->writeElement('title', $event->agenda_titre);
+				$writer->writeElement('category', $event->agenda_type);
+				$writer->writeElement('description', $event->agenda_chapeau);
+				$writer->writeElement('guid', $this->url.$event->url);
+				$writer->writeElement('link', $this->url.$event->url);
+				$writer->writeElement('pubDate',$event->agenda_debut);
+		 	$writer->endElement(); // Close item
+		}
+        
+	 	
+		$writer->endElement(); // Close channel
+	$writer->endElement(); // Close RSS
+	$writer->endDocument();
+	echo $writer->flush();

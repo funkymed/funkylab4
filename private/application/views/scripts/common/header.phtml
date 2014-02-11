@@ -1,0 +1,39 @@
+<div id="header" class="layer">
+	<div id="flash-header" style="height:203px;">
+		<img src="<?php print $this->url;?>directory/bandeau/bandeau.gif"  alt="bandeau" />
+	</div>
+	<div id="header-orange-nav">
+		<ul>
+			<li class="btnmenuorange"><img src="skins/images/left.gif" alt="" /></li>
+			<?php
+			
+				foreach($this->arbo as $first){
+					
+					print '<li class="btnmenuorange"><a href="'.$this->url.$first->url.'">'.($this->pageobj->truncate($first->titre,20)).'</a>';
+					if($first->leaf!=1){
+						print '<ul class="submenu" style="display:none;">';
+						
+						foreach($first->pages as $page){
+							print '<li><a href="'.$this->url.$page->url.'">'.($this->pageobj->truncate($page->titre,50)).'</a></li>';
+						}
+						
+						print '</ul>';
+					}
+					print '</li>';
+				}
+			?>
+			<li class="btnmenuorange"><img src="skins/images/right.gif" alt="" /></li>
+		</ul>
+		<!--
+		<div class="right">
+			<form action="<?php print $this->url.'recherche.html'; ?>" method="post" style="margin-top: 2px; margin-right: 2px;">
+				<p>
+					<label for="word" style="color:white;">Recherche : </label><input type="text" id="word" name="word" /> <input type="submit" value="ok" />
+				</p>
+			</form>
+		</div>
+		-->
+	</div>
+	<div class="clearer"></div>
+		
+</div>

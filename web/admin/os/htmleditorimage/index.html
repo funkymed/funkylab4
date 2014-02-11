@@ -1,0 +1,78 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Ext.ux.HTMLEditorImage Example</title>
+    <link rel="stylesheet" type="text/css" href="../resources/css/ext-all.css">
+    <script type="text/javascript" src="../js/adapter/ext/ext-base.js"></script>
+    <script type="text/javascript" src="../js/ext-all.js"></script>
+    <script type="text/javascript" src="htmleditor.js"></script>
+    <script type="text/javascript" src="fileuploadbutton.js"></script>
+    <link rel="stylesheet" type="text/css" href="loadingindicator.css">
+    <script type="text/javascript" src="loadingindicator.js"></script>
+    <link rel="stylesheet" type="text/css" href="imagebrowser.css">
+    <script type="text/javascript" src="imagebrowser.js"></script>
+    <link rel="stylesheet" type="text/css" href="statictextfield.css">
+    <script type="text/javascript" src="statictextfield.js"></script>
+    <link rel="stylesheet" type="text/css" href="htmleditorimage.css">
+    <script type="text/javascript" src="htmleditorimage.js"></script>
+    <style type="text/css">
+      body {
+      	font-family: verdana, tahoma, helvetica;
+      	padding: 20px;
+        font-size: 13px;
+      }
+      p {
+      	margin-bottom: 15px;
+      }
+      h1 {
+      	font-size: large;
+      	margin-bottom: 20px;
+      }
+    </style>
+    <script type="text/javascript">
+      Ext.onReady(function() {
+        Ext.QuickTips.init();
+        var editor = new Ext.ux.HTMLEditor({
+          width: 650,
+          height: 300,
+          plugins: new Ext.ux.HTMLEditorImage(),
+          el: 'htmleditor'
+        });
+        editor.render();
+      });
+    </script>
+  </head>
+  <body>
+    <h1>Ext.ux.HTMLEditorImage Plugin [<a href="..">Demo List</a>]</h1>
+    <p>This plugin provides a facility to insert and edit images in the Ext.ux.HTMLEditor (which is my extended version of the HTMLEditor).  See <a href="http://extjs.com/forum/showthread.php?t=19480">HtmlEditor & Toolbar Extended for Extensibility</a> for more information on this.</p>
+    <p>Also included is an image browser that has been refined from Jack's DataView example.  See Jack's original version here: <a href="http://extjs.com/deploy/dev/examples/view/data-view.html">DataView Example</a>.</p>
+    <p>All files that make up the full working version are included here, however I have disabled the Upload and Delete functions as I don't want people fiddling with this demo.  All js files are verbose and commented.</p>
+    <p>
+      <table>
+        <tr>
+          <td>All Files:</td>
+          <td><a href="htmleditorimage.zip">HTMLEditorImage.zip</a></td>
+        </tr>
+        <tr>
+          <td>Individual Files:&nbsp;</td>
+          <td>
+            <a href="htmleditor.js">HTMLEditor.js</a>,&nbsp;
+            <a href="htmleditorimage.js">HTMLEditorImage.js</a>,&nbsp;
+            <a href="imagebrowser.js">ImageBrowser.js</a>,&nbsp;
+            <a href="fileuploadbutton.js">FileUploadButton.js</a>,&nbsp;
+            <a href="statictextfield.js">StaticTextField.js</a>
+          </td>
+        </tr>
+      </table>
+    </p>
+    <textarea id="htmleditor">
+      <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Nulla laoreet imperdiet ipsum. Cras magna pede, mattis sit amet, auctor quis, congue sed, lacus. Phasellus tristique. Donec mollis. Sed venenatis nibh quis orci. Duis vitae orci sagittis mauris iaculis pretium. Curabitur condimentum consequat libero. Donec accumsan. Duis vehicula, pede vel sagittis convallis, sapien nibh rhoncus quam, ut molestie magna nunc gravida ligula. Morbi leo erat, viverra eu, condimentum non, adipiscing vel, ligula. Nulla a nisi vel lorem accumsan posuere. Sed nunc sem, sagittis vitae, sollicitudin eu, condimentum nec, tortor. Sed dignissim fringilla justo. Etiam ultricies metus a ipsum. Duis sollicitudin elit sed nisi. Integer ullamcorper turpis eu elit. Sed sagittis urna at sapien.</p>
+      <p>Vivamus dignissim consectetuer metus. Sed nec arcu vulputate mauris dignissim venenatis. Pellentesque pede ante, laoreet tempus, vehicula nec, suscipit vitae, neque. Donec dapibus molestie lacus. Donec volutpat felis eget erat. Etiam lacus metus, nonummy vitae, cursus in, pharetra quis, purus. Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Curabitur feugiat interdum nisi. Maecenas nulla nisl, facilisis sit amet, viverra id, iaculis imperdiet, purus. Nam tincidunt elit non orci.</p>
+      <p>Nam gravida tellus id ipsum. Vivamus dictum lectus sollicitudin mi. Nunc quis velit sit amet urna laoreet dictum. Proin ante. Proin aliquet. Suspendisse hendrerit lacus adipiscing metus. Duis a pede vitae nulla volutpat vestibulum. Sed porttitor pede molestie orci. Nam iaculis dignissim mauris. Fusce porttitor varius nunc. Vestibulum porttitor neque in urna. Nulla in odio. Pellentesque nisl quam, adipiscing ut, ultricies non, lacinia et, augue. Suspendisse ultrices. Cras ut nunc. Phasellus viverra dui condimentum augue. Maecenas odio. </p>
+      <p>Phasellus ac quam varius nisi sodales semper. Duis scelerisque ligula eu quam. Sed nisl nisi, fermentum ut, varius ut, vulputate eget, arcu. Etiam hendrerit bibendum magna. In vel mi quis nibh tempus mollis. Maecenas sit amet sem. Cras hendrerit feugiat leo. Maecenas vitae ante vel pede malesuada feugiat. Aliquam eget sapien vitae eros laoreet convallis. Vivamus porttitor pede iaculis quam.</p>
+      <p>Aliquam tortor purus, fermentum in, tincidunt sed, pulvinar quis, risus. Aliquam accumsan luctus tortor. Integer diam massa, commodo vitae, fringilla ut, iaculis ac, lacus. Duis ut nunc. Integer congue, enim mattis blandit iaculis, nulla massa volutpat leo, et sodales ligula neque sit amet justo. Mauris tincidunt ligula quis lacus. Duis est. Aenean nonummy pulvinar diam. Donec cursus aliquet justo. Nullam facilisis enim eget neque. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Phasellus molestie porta elit. Donec lacinia tristique magna. Phasellus porttitor orci nec sapien. Mauris dictum congue lacus. Nulla nunc erat, tempor congue, commodo non, interdum sit amet, erat. Donec consectetuer ligula in tortor.</p>
+    </textarea>
+    <p>&nbsp;</p>
+  </body>
+</html>

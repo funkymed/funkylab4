@@ -1,0 +1,11 @@
+<?php 
+
+	$writer = new XMLWriter();
+	$writer->openMemory();
+	$writer->startDocument('1.0');
+	
+	$writer->startElement('root');
+		$writer->writeElement('nbpages', $this->value['nbpages']);
+		$writer->writeElement('nbitems', $this->value['nbitems']);
+	$writer->endDocument();
+	echo $writer->flush();

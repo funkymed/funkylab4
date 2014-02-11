@@ -1,0 +1,54 @@
+<?php
+	$pages = new TPages();
+?>
+<div id="page" class="col<?php print ($this->viewsidebar==1) ? ' left' : ' full';?>">
+	 	
+	<div class="chemindefer">Vous etes ici : <a href="<?php print $this->baseUrl();?>/videos/">Vid&eacute;os</a></div>
+
+	<?php 
+		if(isset($_SESSION['ville_saint_denis']['user'])){
+			print '<h1 id="edit_titre">';
+		}else{
+			print '<h1>';
+		}
+		
+		print 'Vid&eacute;os';
+		
+		print '</h1>';
+	?>
+	<div style="width:100%;margin:25px;">
+		
+		<div id="player">
+			<a href="http://www.macromedia.com/go/getflashplayer">http://www.macromedia.com/go/getflashplayer</a>
+		</div>
+		<script type="text/javascript">
+		   var so = new SWFObject("<?php print $this->url;?>/player.swf", "flash_video", "704", "336", "10", "#000000");
+		   so.addParam("quality", "high");
+		   so.addParam("menu", "false");
+		   so.addParam("wmode", "transparent");
+		   so.addParam("allowFullScreen", "true");
+		   so.useExpressInstall("<?php print $this->url;?>/skins/swf/expressinstall.swf");
+		   so.write("player");
+		</script>
+	</div>
+	
+	<?php
+		//Si pas de sidebar
+		if(!isset($this->viewsidebar)  || isset($this->viewsidebar) && $this->viewsidebar==0){
+			//Si affichage des enfants demandé
+			if($this->page->child_display==1){
+				//Si des enfants
+				if(isset($this->page->children) && count($this->page->children)>0) {
+					print '<div id="childpage">';
+					print '<ul>';
+					foreach($this->page->children as $page){
+						print '<li><a href="'.$this->baseUrl().$page->url.'">'.($pages->truncate($page->titre,50)).'</a></li>';
+					}
+					print '</ul>';
+					print '</div>';
+				}
+			}
+		}
+	?>
+	
+</div>

@@ -1,0 +1,115 @@
+<div id="side" class="col right">
+
+	<?php if(isset($this->children) && count($this->children)>0 && $this->child_display==1 && count($this->children)>0){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<ul class="bgwhite">
+			<?php 
+				foreach($this->children as $child){
+					print '<li><a href="'.$this->url.$child->url.'">'.($this->pageobj->truncate($child->titre,50)).'</a></li>';
+				}
+			?>
+		</ul>
+	</div>
+	
+	<?php } 
+	
+	?>
+	
+	<?php if(count($this->brothers)>0 && $this->brotherdisplay==1){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<ul class="bgwhite">
+			<?php
+				foreach($this->brothers as $brother){
+					print '<li><a href="'.$this->url.$brother->url.'">'.($this->pageobj->truncate($brother->titre,50)).'</a></li>';
+				}
+			?>
+		</ul>
+	</div>
+	<?php } ?>
+	
+	<?php if(!isset($this->info_display) ||(isset($this->info_display) && $this->info_display==1) && count($this->infoPratique)>0){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<div class="title">
+			<span class="titlerub">PRATIQUE</span>
+			<img src="<?php print $this->url;?>/skins/images/droite_etoile.jpg" alt="" />
+		</div>
+		<ul>
+			<?php
+				foreach($this->infoPratique as $info){
+					print '<li><a href="'.$this->url.$info->url.'">'.($this->pageobj->truncate($info->titre,20)).'</a>';
+				}
+			?>
+		</ul>
+	</div>	
+	<?php } ?>
+	
+	<?php if(!isset($this->lien_display) ||(isset($this->lien_display) && $this->lien_display==1) && count($this->liensInterne)>0){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<div class="title">
+			<span class="titlerub">DEMOCRATIE</span>
+			<img src="<?php print $this->url;?>/skins/images/droite_etoile.jpg" alt="" />
+		</div>
+		<ul>
+			<?php
+				foreach($this->liensInterne as $lien){
+					print '<li><a href="'.$this->url.$lien->url.'">'.($this->pageobj->truncate($lien->titre,20)).'</a>';
+				}
+			?>
+		</ul>
+	</div>		
+	<?php } ?>
+	
+	
+	<?php if(!isset($this->demarches_display) ||(isset($this->demarches_display) && $this->demarches_display==1) && count($this->demarches)>0){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<div class="title">
+			<span class="titlerub">DEMARCHES</span>
+			<img src="<?php print $this->url;?>/skins/images/droite_etoile.jpg" alt="" />
+		</div>
+		<ul>
+			<?php
+				foreach($this->demarches as $lien){
+					print '<li><a href="'.$this->url.$lien->url.'">'.($this->pageobj->truncate($lien->titre,20)).'</a>';
+				}
+			?>
+		</ul>
+	</div>		
+	<?php } ?>	
+	
+	
+	<?php if(!isset($this->agenda_display) ||(isset($this->agenda_display) && $this->agenda_display==1)){ ?>
+	<div class="boxinfo">
+		<div>
+			<img src="<?php print $this->url;?>/skins/images/article_petit_separateur.jpg" alt=""/>	
+		</div>
+		<div class="title">
+			<span class="titlerub">AGENDA</span>
+			<img src="<?php print $this->url;?>/skins/images/droite_etoile.jpg" alt="" />
+		</div>
+		<ul>
+			<?php
+				if(isset($this->evenements)){
+					foreach($this->evenements as $event){
+						print '<li><a href="'.$this->url.$event->url.'">'.($this->pageobj->truncate($event->agenda_titre,20)).'</a>';
+					}
+				}
+			?>
+		</ul>
+	</div>		
+	<?php } ?>
+</div>

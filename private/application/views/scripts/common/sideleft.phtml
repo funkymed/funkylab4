@@ -1,0 +1,23 @@
+<div id="side" class="col left">
+	<div id="blocleft1">
+		<img src="skins/images/bloc_left1.gif" alt="" />
+	</div>
+	<div>
+		<ul>
+		<?php
+			if(isset($this->arbofooter)){
+				$c=0;
+				foreach($this->arbofooter as $first){
+					$col = ($c%2==0) ? "one" : "two";
+					print ' <li><a class="'.$col.'" href="'.$this->url.$first->url.'">'.($this->pageobj->truncate($first->titre,20)).'</a></li>';
+					$c++;
+				}
+				
+			}
+		?>
+		</ul>
+	</div>
+	<div id="blocleft2">
+		<img src="skins/images/bloc_left2.gif" alt="" />
+	</div>
+</div>

@@ -1,0 +1,79 @@
+.browseimage{			background-image:url('../shared/icons/fam/image_add.png') !important;}
+.browseimagerefresh{	background-image:url('../images/default/grid/refresh.gif') !important}
+.parentdir{				background-image:url('../shared/parentdir.gif') !important}
+
+.admin-module{			background-image:url('../shared/icons/iconssilk/lock.png') !important;}
+.admin-add {			background-image:url('../shared/icons/iconssilk/lock_add.png') !important;}
+.admin-remove {			background-image:url('../shared/icons/iconssilk/lock_delete.png') !important;}
+.admin-edit {			background-image:url('../shared/icons/iconssilk/lock_edit.png') !important;}
+.admin-logout {			background-image:url('../shared/icons/iconssilk/lock_open.png') !important;}
+.admin-user_edit {		background-image:url('../shared/icons/iconssilk/user_edit.png') !important;}
+
+.email{ background-image:url(../shared/icons/iconssilk/email.png) !important; }
+.duplicate{ background-image:url(../shared/icons/iconssilk/email_add.png) !important;}
+.pageview{ background-image:url(../shared/icons/iconssilk/email_magnify.png) !important;}
+.sendEmail{ background-image:url(../shared/icons/iconssilk/email_transfer.png) !important;}
+
+
+.drive {				background-image:url('../shared/icons/iconssilk/drive_web.png') !important;}
+.agenda {				background-image:url('../shared/icons/agenda.png') !important;}
+.agendacontact {		background-image:url('../shared/icons/agendacontact.png') !important;}
+.xls{					background-image:url('../shared/icons/xls.gif') !important;}
+.rename{					background-image:url('../shared/rename.png') !important;}
+.copy{					background-image:url('../shared/copy.gif') !important;}
+
+/*.x-tbar-loading{		background-image:url(../shared/ajax-loader.gif) !important;}*/
+/*-------------------------------------------------------------------*/
+#button-grid .x-panel-body {
+    border:1px solid #99bbe8;
+    border-top:0 none;
+}
+
+.x-grid3-hd-row td.ux-filtered-column {   
+    font-style: italic;  
+    font-weight: bold;
+}	
+.search-item {
+    font:normal 11px tahoma, arial, helvetica, sans-serif;
+    padding:3px 10px 3px 10px;
+    border:1px solid #fff;
+    border-bottom:1px solid #eeeeee;
+    white-space:normal;
+    color:#555;
+}
+.search-item h3 {
+    display:block;
+    font:inherit;
+    font-weight:bold;
+    color:#222;
+}
+
+.search-item h3 span {
+    float: right;
+    font-weight:normal;
+    margin:0 0 5px 5px;
+    width:100px;
+    display:block;
+    clear:none;
+}
+
+
+.ux-mselect{
+    overflow:auto;
+    background:white;
+    position:relative; /* for calculating scroll offsets */
+    zoom:1;
+    overflow:auto;	
+}
+.ux-mselect-item{
+    font:normal 12px tahoma, arial, helvetica, sans-serif;
+    padding:2px;
+    border:1px solid #fff;
+    white-space: nowrap;
+    cursor:pointer;
+}
+.ux-mselect-selected{
+	border:1px dotted #a3bae9 !important;
+    background:#DFE8F6;
+    cursor:pointer;
+}

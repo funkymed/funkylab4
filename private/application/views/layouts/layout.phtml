@@ -1,0 +1,133 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>C&ocirc;t&eacute; STADE - <?php print $this->titre_page;?> <?php print $this->meta_title;?></title>
+		<base href="http://<?php print $_SERVER['SERVER_NAME'] . $this->baseUrl(); ?>/"></base>
+		
+		<meta name="keywords" content="<?php print htmlentities($this->meta_tags);?>" />
+		<meta name="description" content="<?php print htmlentities($this->meta_description);?>" />
+		<meta name="robots" content="index,follow" />
+		<meta name="robots" content="noodp" />
+		
+		
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="Content-Style-Type" content="text/css" />
+		<meta http-equiv="lang" content="fr" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		
+		
+		<link href="<?php print  $this->baseUrl();?>/agenda-rss.xml" rel="alternate" type="application/rss+xml" title="Flux Rss Agenda" />
+		<link href="<?php print  $this->baseUrl();?>/actualites-rss.xml" rel="alternate" type="application/rss+xml" title="Flux Rss Actualite" />
+		
+		<link href="<?php print  $this->baseUrl();?>/skins/css/common.css" media="screen" rel="stylesheet" type="text/css" />
+		<link href="<?php print  $this->baseUrl();?>/skins/css/agenda.css" media="screen" rel="stylesheet" type="text/css" />
+		
+		<script type="text/javascript" src="<?php print  $this->baseUrl();?>/skins/js/prototype.js"></script>
+		<script type="text/javascript" src="<?php print  $this->baseUrl();?>/skins/js/scriptaculous.js"></script>	
+		<script type="text/javascript" src="<?php print  $this->baseUrl();?>/skins/js/protomenu.js"></script>	
+		<script type="text/javascript" src="<?php print  $this->baseUrl();?>/skins/js/common.js"></script>	
+		<script type="text/javascript" src="<?php print  $this->baseUrl();?>/skins/js/swfobject.js"></script>	
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+
+	</head>
+	<body>
+	
+		<?php if($this->autorised==true){  ?>
+		
+		<div style="position:absolute;background:#efefef;color:black;right:5px;top:5px;font-size:9pt;padding:5px;z-index:999;">
+			<span>Mode administration:</span> 
+			<span id="loading-msg"></span> <br /> 
+			<span>Utilisateur : <?php print $_SESSION['cotestade']['user']['prenom'].' '.$_SESSION['cotestade']['user']['nom'];?></span>
+		</div>
+		<script src="<?php print  $this->baseUrl();?>/admin/os/js/init_front.js" type="text/javascript"></script>
+		
+		<?php  } ?>
+ 		
+		<div id="bodycontent">
+			<?php 
+			
+				$pages 		= new TPages();
+				$arbo 		= $pages->getMenu();
+				$arbofooter = $pages->getMenu(true);
+	
+				echo $this->partial("common/header.phtml",array(
+						"url"=>$this->baseUrl(),
+						"pageobj"=>$pages,
+						"arbo"=>$arbo
+					)
+				);
+			?>
+			
+			<div id="center">
+				<div id="contentpage">
+				
+					<?php
+						echo $this->partial("common/sideleft.phtml",array(
+								"url"=>$this->baseUrl(),
+								"pageobj"=>$pages,
+								"arbofooter"=>$arbofooter
+							)
+						);
+				
+						$layout = $this->layout();
+						echo $layout->content;
+						/*
+						if(isset($this->viewsidebar) && $this->viewsidebar==1){
+							if(isset($this->page->children)){
+								echo $this->partial("common/side.phtml",array(
+										"url"=>$this->baseUrl(),
+										"children"=>$this->page->children,
+										"child_display"=>$this->page->child_display,
+										"info_display"=>$this->page->info_display,
+										"lien_display"=>$this->page->lien_display,
+										"demarches_display"=>$this->page->demarches_display,
+										"agenda_display"=>$this->page->agenda_display,
+										"pageobj"=>$pages,
+										"brothers"=>$this->page->brothers,
+										"brotherdisplay"=>$this->page->brother_display,
+										"infoPratique"=>$this->infoPratique,
+										"demarches"=>$this->demarches,
+										"liensInterne"=>$this->liensInterne,
+										"evenements"=>$this->evenements
+									)
+								);
+								
+							}else{
+								echo $this->partial("common/side.phtml",array(
+										"url"=>$this->baseUrl(),
+										"pageobj"=>$pages,
+										"arbo"=>$arbo
+									)
+								);
+							}
+						}
+						*/
+					?>
+					<div class="clearer"></div>
+					
+					
+				</div>		
+				<?php
+		
+					echo $this->partial("common/footer.phtml",array(
+							"url"=>$this->baseUrl(),
+							"pageobj"=>$pages
+						)
+					);
+				?>
+
+			</div>		
+			
+			
+		</div>
+		<script type="text/javascript">
+			try {
+				var pageTracker = _gat._getTracker("UA-6824204-3");
+				pageTracker._trackPageview();
+			} catch(err) {}
+		</script>		
+	</body>
+</html>

@@ -1,0 +1,45 @@
+Valeur "editoropt" de l'objet	=> Items:[Liste de items possible],
+				   Css:[Liste des fichiers css],
+				   PosObjList:Position de la list,
+				   ListStyle:[Liste des styles dans la menu],
+				   FontList:[Liste des fontes]
+
+Exemple				=> Items:['italic','-','orderedlist'],
+				   Css:['toto.css'],
+				   PosObjList:'italic',
+				   ListStyle:[{text: 'Standard Header', value: 'std_hdr'},{text: 'Standard Header', value: 'std_hdr'}],
+				   FontList:['Arial','Courier New']
+
+Items possible :
+
+	'-'			=> Separateur
+	'fonts'			=> Liste des fontes (Ne fonctionne pas sous safari)
+	'bold'			=> Mettre en gras
+        'italic'		=> Mettre en italic
+        'underline'		=> Souligner
+        'allformats'		=> Equivalent à ['-', 'bold', 'italic', 'underline']
+	'increasefontsize'	=> Agrandir la tailel de la fonte
+	'decreasefontsize'	=> Reduire la tailel de la fonte
+	'allfontsizes'		=> Equivalent à ['-', 'increasefontsize', 'decreasefontsize']
+	'forecolor'		=> Couleur de texte
+	'backcolor'		=> Couleur de fond
+	'allcolors'		=> Equivalent à ['-', 'forecolor', 'backcolor']
+	'justifyleft'		=> Aligner à gauche
+	'justifycenter'		=> Aligner au centre
+	'justifyright'		=> Aligne à droite
+	'allalignments'		=> Equivalent à ['-', 'justifyleft', 'justifycenter', 'justifyright']
+	'link'			=> Ajouer un lien (Ne fonctionne pas sous safari)
+	'alllinks'		=> Equivalent à ['-', 'link']
+	'orderedlist'		=> Liste ordonnée (Ne fonctionne pas sous safari)
+	'unorderedlist'		=> Liste non ordonnée (Ne fonctionne pas sous safari)
+	'alllists'		=> Equivalent à ['-', 'orderedlist', 'unorderedlist']
+	'sourceedit'		=> Voir la source (Ne fonctionne pas sous safari)
+
+Position de la liste		=> Element devant lequel placé le select
+
+Style de l'éditeur :		=> Liste des fichiers css
+
+Liste des styles dans la menu	=> Liste des styles dans le menu
+
+Liste des fontes		=> Liste des fonte disponible dans le menu
+

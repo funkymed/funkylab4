@@ -1,0 +1,7 @@
+AuthUserFile "/kunden/homepages/15/d301349868/htdocs/www.cotestade.fr/web/admin/htpassword/htpassword"
+AuthGroupFile /dev/null
+AuthName "Cote-stade | CMS"
+AuthType Basic
+<Limit GET POST>
+	require valid-user
+</Limit>

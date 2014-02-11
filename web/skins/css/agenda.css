@@ -1,0 +1,204 @@
+#listart select{
+	float:right;
+	width:300px;
+}
+#content{
+	width:950px;
+	padding:5px;
+}
+#mainContent .special{ list-style:none; 	background:none;list-style-image:none;}
+#content ul{ list-style:none; ; 	background:none;list-style-image:none;padding-left:0px;}
+
+#content ul li{
+	list-style:none; 
+	padding-top:10px;
+	padding-bottom:10px;
+	background:url('../images/line.gif') center bottom no-repeat;
+	min-height:70px;
+}
+}
+#content ul li{ outline: none; }
+#content img{
+	border:0px;
+}
+
+
+#content .vignette{
+	float:left;
+	margin-right:15px;
+	width:64px;
+	height:64px;
+}
+#content .clearer{
+	clear:both;
+	display:block;
+	
+	height:1px;
+	line-height:1px;
+	font-size:1px;
+}
+#content h3{
+	margin-top:0px;
+	color:#FE5E00;
+	font-size:12px;
+}
+
+#content ul li a{
+	color:#FE5E00;
+	font-size:12px;
+	text-decoration:none!important;
+	font-weight:bold!important;
+}
+#content .dateevent{
+	float:right;font-weight:bold;color:#4c4bc0;
+}
+#content .typeevent{
+	 text-transform: uppercase;
+	 color:gray;
+	
+}
+
+/*==================================================================================================
+//	CSS CALENDRIER
+//==================================================================================================*/
+
+#calendrier{
+	width:100%;
+	height:159;
+	color:#000000;
+	padding:5;
+}
+
+#calendrier .cal_mois{	
+	height:10;
+	color:#4C4BC0;
+}
+
+#calendrier .cal_mois A:hover{	
+	color:#4C4BC0;
+	text-decoration: underline; 
+}
+
+#calendrier A{
+	text-align:right;
+	color:#4C4BC0;
+	text-decoration: none; 
+}
+
+#calendrier .day{
+	height:10;
+	text-align:right;
+	color:#ffffff;
+	background:#4C4BC0;	
+}
+
+#calendrier .cal_valide{
+	color:#000000;
+	background:#ccc;	
+}
+
+#calendrier .cal_valide_OVER{
+	color:#ffffff;
+	background:#FE5E00;	
+}
+
+#calendrier .cal_valide_OVER A{
+	color:#ffffff;
+	background:#cdd;	
+}
+
+#calendrier .cal_today{
+	border:  thick dashed  #4e727a;
+	border-width:2;
+	background:#ffffff;
+}
+
+#calendrier .cal_day{
+	background:#ffffff;
+}
+
+
+/*==================================================================================================
+//	Pagination
+//==================================================================================================*/
+#pagination{
+	
+}
+#pagination .prevpage a{
+	color:#FE5E00;
+	text-decoration:none;
+}
+
+#pagination .prevpage a:hover{
+	color:#FE5E00;
+	text-decoration:underline;
+}
+#pagination .prevpage{
+	float:left;
+}
+#pagination .nextpage{
+	float:right;
+}
+/*==================================================================================================
+//	TOOLS
+//==================================================================================================*/
+	.dd-ct {
+		padding:0;
+		margin:20px 0;
+		min-height:150px;
+		list-style:none;
+		list-style-type:none;
+	}
+	
+	
+		
+	.dd-item{
+		height:45px;
+		padding :4px;
+		border:1px solid #efefef;
+		background:white;
+		list-style:none;
+		list-style-type:none;
+	}
+	
+	.handle {
+		display:block;
+		background:#ccc;
+		text-align:right;
+		padding:3px;
+		margin-bottom:2px;
+		cursor : move;
+	}
+
+	
+	.handle:hover {
+		opacity: 0.4;
+		-moz-opacity: 0.4;
+        filter: alpha(opacity=40);
+	}
+
+
+	#container{
+		width:750px;
+	}
+
+	#msg-div {
+	    position:absolute;
+	    left:15px;
+	    top:10px;
+	    width:250px;
+	    z-index:20000;
+	    -moz-opacity: 0.9;
+        filter: alpha(opacity=90);
+	}
+	
+	.msg .x-box-mc {
+		color:#555;
+		font-size:8pt;
+	}
+	#msg-div h3 {
+		font-size:10pt;
+	    color:#333;
+	    font-weight:bold;
+	    margin:10px 0;
+	}

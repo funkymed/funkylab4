@@ -1,0 +1,43 @@
+/*
+ * Ext JS Library 2.1
+ * Copyright(c) 2006-2008, Ext JS, LLC.
+ * licensing@extjs.com
+ * 
+ * http://extjs.com/license
+ */
+
+.x-progress-wrap {
+    border:1px solid #cfb065;
+    overflow:hidden;
+}
+.x-progress-inner {
+    height:18px;
+    background: #f3ede0 url(../images/default/qtip/bg.gif) repeat-x;
+    position:relative;
+}
+.x-progress-bar {
+    height:18px;
+    float:left;
+    width:0;
+    background:#eed79c url( ../images/default/progress/progress-bg.gif ) repeat-x left center;
+    border-top:1px solid #fdf0d1;
+    border-bottom:1px solid #e4c97f;
+    border-right:1px solid #e4c97f;
+}
+.x-progress-text {
+    font-size:11px;
+    font-weight:bold;
+    color:#ffffff;
+    padding:1px 5px;
+    overflow:hidden;
+    position:absolute;
+    left:0;
+    text-align:center;
+}
+.x-progress-text-back {
+    color:#957b39;
+    line-height:16px;
+}
+.ext-ie .x-progress-text-back {
+    line-height:15px;
+}

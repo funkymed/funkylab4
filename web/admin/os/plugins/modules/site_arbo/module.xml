@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<module>
+	<title><![CDATA[Pages du site]]></title>
+	<namespace>site_arbo</namespace>
+	<icon>icon-grid</icon>
+	<desktop>1</desktop>
+	<order>8</order>
+	<initajax>arbo_tree.php</initajax>
+	<eval>1</eval>
+	<usertype>sadmin,admin,redacteur</usertype>
+</module>

@@ -1,0 +1,92 @@
+<div id="page" class="col">
+	 	
+	<div class="chemindefer">Vous etes ici : <a href="<?php print $this->baseUrl();?>/index.html">Accueil</a> &gt; <a href="<?php print $this->baseUrl();?>/agenda/">Agenda</a> <?php 
+	
+		foreach ($this->categories as $categorie){
+			$value 	= strtolower($categorie);
+			if($value==strtolower($this->type)){
+				print ' &gt; <a href="'.$this->baseUrl().'/agenda/'.$this->type.'/">'.$categorie.'</a>';
+			}
+		}
+		
+		?> &gt; <a href="<?php print $this->baseUrl().$this->currentevent->url;?>"><?php print $this->titre_page;?></a></div>
+
+	<h1><?php print $this->titre_page;?></h1>
+	
+	<div style="width:98%;" id="content">
+		<div style="float:right;">
+			<select onchange="document.location.href='<?php print $this->baseUrl();?>/agenda/'+this.value">
+				<option value="">Selectionnez une categorie</option>
+				<?php
+				foreach ($this->categories as $categorie){
+					$name 	= $categorie;
+					$value 	= strtolower($categorie);
+					if($value==strtolower($this->type)){
+						print '<option value="'.$value.'/" selected="selected">'.$name.'</option>';
+					}else{
+						print '<option value="'.$value.'/">'.$name.'</option>';
+					}
+				}
+				?>
+			</select>
+		</div>
+		<div class="clearer"></div>
+		<div>
+			<p><?php print $this->currentevent->agenda_chapeau;?></p>
+			<p><?php print str_replace("../directory",$this->baseUrl()."/directory",$this->currentevent->agenda_texte);?></p>
+			<div class="clearer"></div>
+			<p>
+			<?php
+				if ($this->currentevent->agenda_file!=""){
+					print '<a href="'.$this->baseUrl().'/directory/'.$this->currentevent->agenda_file.'">'.$this->currentevent->agenda_file.'</a><br />';
+				}
+				
+				if ($this->currentevent->agenda_linkext!="" && $this->currentevent->agenda_linkext!="http://"){
+					print '<a href="'.$this->currentevent->agenda_linkext.'">'.$this->currentevent->agenda_linkext.'</a><br />';
+				}
+				
+				if ($this->currentevent->agenda_linkint!=""  && $this->currentevent->agenda_linkint!="http://"){
+					print '<a href="'.$this->currentevent->agenda_linkint.'">'.$this->currentevent->agenda_linkint.'</a><br />';
+				}
+				
+			?>
+			</p>
+			<?php if ($this->currentevent->contacts){ ?>
+			<div class="clearer"></div>
+				<div id="content">
+					<h3 class="title">Contacts utiles</h3>
+					<ul class="special">
+						<?php
+							foreach ($this->currentevent->contacts as $i=>$contact){
+							
+									print '<li>';
+ 									print '<b>'.$contact->contact_titre.' '.$contact->contact_nom.' '.$contact->contact_prenom.'</b><br/>';
+ 									if ($contact->contact_quartier!="") print $contact->contact_quartier.'<br />';
+ 									
+ 									print $contact->contact_adresse.' '.$contact->contact_cp.' '.$contact->contact_ville.'<br/>';
+ 									if ($contact->contact_tel!="") print 'tel : '.$contact->contact_tel.'<br/>';
+ 									if ($contact->contact_fax!="") print 'fax : '.$contact->contact_fax.'<br/>';
+ 									
+ 									if ($contact->contact_email!="") print 'email : <a href="mailto:'.$contact->contact_email.'">'.$contact->contact_email.'</a><br/>';
+									if ($contact->contact_url!="") print 'lien : <a href="'.$contact->contact_url.'" target="_blank">'.$contact->contact_url.'</a><br/>';
+									if ($contact->contact_infopratique!=""){
+										print '<span style="cursor:pointer;font-weight:bold;" onclick="swapinfo(this,'.$i.');">[+]</span>&nbsp;Info pratique : <br/>';
+										print '<blockquote id="infopratique-'.$i.'" style="display:none;">'.nl2br($contact->contact_infopratique).'</blockquote>';
+									}
+									
+									if ($contact->contact_lat!="" && $contact->contact_long!=""){
+										print '<span style="cursor:pointer;font-weight:bold;" onclick="swapmap(this,'.$i.');">[+]</span>&nbsp;Afficher le plan : <br/>';
+										print '<blockquote  id="map-'.$i.'" style="display:none;">';
+										print '	<img src="http://maps.google.com/maps/api/staticmap?center='.$contact->contact_lat.','.$contact->contact_long.'&zoom=16&size=400x400&markers=color:red|'.$contact->contact_lat.','.$contact->contact_long.'&key=ABQIAAAABfCfVJ6YRX7801uApvUPDRQzcXcFQfD8Q_WGQjvEGItOz7b1_xSdIaVT3yEP2BqnEP_HVRHokLnoow&sensor=false" />';
+										print '</blockquote>';
+									}
+									print '</li>';
+							}
+						?>
+					</ul>
+				</div>
+			<?php } ?>
+		</div>
+		
+	</div>
+</div>

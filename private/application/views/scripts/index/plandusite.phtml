@@ -1,0 +1,33 @@
+<div id="page" class="col">
+
+	<div class="chemindefer">Vous etes ici : <a href="<?php print $this->baseUrl();?>/index.html">Accueil</a> > <a href="<?php print $this->baseUrl();?>/plan-du-site.html">Plan du site</a></div>
+
+	<h1>Plan du site</h1>
+	<div id="plandusite">
+		<?php
+		
+			function ConvertObjToHtml($arbo,$root){
+				print '<ul>';
+				foreach($arbo as $child){
+					if($child->parent_id=='0'){
+						print '<li><h3><a href="'.$root.$child->url.'">'.($child->titre).'</a></h3>';
+						if(!$child->leaf) ConvertObjToHtml($child->pages,$root);
+						print '</li>';
+					}else{
+						print '<li><a href="'.$root.$child->url.'">'.($child->titre).'</a>';
+						if(!$child->leaf) ConvertObjToHtml($child->pages,$root);
+						print '</li>';
+					}
+				}
+				print '</ul>';
+			}
+			$pages = new TPages();
+			$arbo = $pages->getMenu();
+			ConvertObjToHtml($arbo,$this->baseUrl());
+			
+	    
+	     
+			
+		?>
+	</div>
+</div>

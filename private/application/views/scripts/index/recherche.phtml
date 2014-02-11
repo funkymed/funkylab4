@@ -1,0 +1,37 @@
+<?php
+	$pages = new TPages();
+?>
+<div id="page" class="col">
+
+	<div class="chemindefer">Vous etes ici : <a href="<?php print $this->baseUrl();?>/index.html">Accueil</a></div>
+
+	<h1>Recherche : <?php print $this->words;?></h1>
+	<div style="width:98%;" id="content">
+		<div>
+			<div class="special">
+				<ul>
+				<?php foreach($this->res as $res){ ?>
+						<li>
+							<div>
+								<h3 class="normal">
+									<a title="<?php print $res->titre;?>"href="<?php print $this->baseUrl().$res->url;?>"><?php print $res->titre;?></a>
+								</h3>
+								<p><?php 
+									if($res->chapeau!=""){
+										$text = $res->chapeau;
+									}else{
+										$text = $res->html;
+									}
+									
+									print $pages->truncate(strip_tags($text),600);
+									
+								?></p>	
+							</div>
+						</li>
+					
+				<?php } ?>	
+				</ul>	
+			</div>
+		</div>
+	</div>
+</div>

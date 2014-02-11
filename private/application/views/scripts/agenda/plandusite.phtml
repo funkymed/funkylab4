@@ -1,0 +1,32 @@
+<div id="page" class="col left">
+
+	<div class="chemindefer">Vous etes ici : <a href="javascript:void(0);">Accueil</a> > <a href="javascript:void(0);">Mairie et Services</a></div>
+
+	<h1>Plan du site</h1>
+	<div id="plandusite">
+		<?php
+		
+			function ConvertObjToHtml($arbo,$root){
+				print '<ul>';
+				foreach($arbo as $child){
+					if($child->parent_id=='0'){
+						print '<li><h3><a href="'.$root.$child->url.'">'.utf8_decode($child->titre).'</a></h3>';
+						if(!$child->leaf) ConvertObjToHtml($child->pages,$root);
+						print '</li>';
+					}else{
+						print '<li><a href="'.$root.$child->url.'">'.utf8_decode($child->titre).'</a>';
+						if(!$child->leaf) ConvertObjToHtml($child->pages,$root);
+						print '</li>';
+					}
+				}
+				print '</ul>';
+			}
+			
+			ConvertObjToHtml($this->arbo,$this->baseUrl());
+			
+	    
+	     
+			
+		?>
+	</div>
+</div>
